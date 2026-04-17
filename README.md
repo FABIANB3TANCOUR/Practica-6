@@ -12,12 +12,18 @@ Esta práctica implementa un agente de aprendizaje por refuerzo para jugar Conec
 ### Cómo ejecutar
 1. Entrenar al agente:
    -Ejecute el archivo `main.py`
+   
    -Escriba 1 (la opción para entrenar a la IA)
+   
    -Escriba la cantidad de partidas que desee (ejemplo 10,000)
+   
    -Eliga una cantidad de epsilon para jugar con su comportamiento (puede ser 0.1 o 0.03 hasta 1)
-2. Jugar contra la IA:
+   
+3. Jugar contra la IA:
    -Ejecuta el archivo `main.py `
+   
    -Ecriba 2 (opción para jugar contra la IA)
+   
    -Diviertase
 
 ## Estructura de la practica
@@ -50,29 +56,11 @@ check_winner: Escanea el tablero en 4 direcciones. Es el "árbitro" que detiene 
 ## Uso del epsilon y Ecuación De Bellman
  Epsilon:
  El Epsilon es el parámetro que decide si el agente se comporta como un explorador o como un experto.
+ 
  Exploración: El agente elige un movimiento al azar. Es vital al principio para descubrir que alinear 4 fichas da puntos. Sin esto, la IA nunca intentaría jugadas nuevas.
+ 
  Explotación: El agente elige el movimiento que su memoria (Q-table) dice que es el mejor. Es cuando la IA aplica lo que ya aprendió para ganar.
 
 Ecuación de Bellman: 
 Es la fórmula matemática que actualiza la memoria del agente. No solo premia el último movimiento que ganó el juego, sino que reparte esa "felicidad" hacia atrás, a los movimientos que permitieron llegar ahí.
-En tu código, se ve así:
-Q(s,a)=Q(s,a)+α[r+γmaxQ(s 
-′
- ,a 
-′
- )−Q(s,a)]
-¿Qué significa cada parte?
 
-Q(s,a): El valor actual de hacer el movimiento a en el tablero s.
-
-α (Alpha): Qué tan rápido aprende (tasa de aprendizaje).
-
-r (Recompensa): Los +100 por ganar o −100 por perder.
-
-γmaxQ(s 
-′
- ,a 
-′
- ): El valor del mejor movimiento posible en el siguiente turno. Esto es lo que permite que el agente "anticipe" el futuro.
-
-3
