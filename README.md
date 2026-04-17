@@ -22,10 +22,15 @@ Esta práctica implementa un agente de aprendizaje por refuerzo para jugar Conec
 
 ## Estructura de la practica
 Practica-6/
+
 ├── main.py              # Orquestador del juego y visualización (Matplotlib)
+
 ├── agente.py            # Lógica de Q-Learning (Ecuación de Bellman)
+
 ├── logica_juego.py      # Reglas del juego y gestión del tablero
+
 ├── q_table.pkl          # Archivo de memoria (se genera al entrenar)
+
 └── README.md            # Documentación e instrucciones
 
 ## Explicación de cada archivo
